@@ -1,5 +1,6 @@
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 from django.template.response import TemplateResponse
+from django.shortcuts import render
 
 from wagtail.models import Page
 from wagtail.search.models import Query
@@ -36,3 +37,6 @@ def search(request):
             "search_results": search_results,
         },
     )
+
+def landing(request):
+    return render(request,"landing.html")
