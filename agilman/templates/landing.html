@@ -1,18 +1,19 @@
 <HTML>
+{% load tailwind_tags %}
 <head>
-
+{% tailwind_css %}
 </head>
-<body>
-  <p>
-    Hello Welcome to my website!
-  </p>
-  <p>
-    <a href="blogs/">
-        Blogs
-    </a>
-  </p>
-  <p>
-    click here for socials
-  </p>
 
+<body>
+  <div class="flex bg-stone-400 p-2">
+  </div>
+  <div>
+    <p>
+      Hello my name is Alex.
+      I currently live in Blaine Washington where I write software,
+      climb trees, spin poi, among other hobbies.
+      This page is meant as a way to keep in touch with friends, and the community since I am off facebook.
+      Please check out my <a href="/blog" class="underline text-blue-600 hover:text-blue-800">blog</a> for updates.
+    </p>
+  </div>
 </body>
