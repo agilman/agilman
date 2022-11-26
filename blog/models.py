@@ -6,7 +6,9 @@ from wagtail.admin.panels import FieldPanel
 
 # Create your models here.
 class BlogIndex(Page):
-    pass
+    subpage_types = ['BlogPage']
+    parent_page_types = ['home.HomePage']
+    max_count = 1
 
 class BlogPage(Page):
     # title = models.CharField(max_length=64)
