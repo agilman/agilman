@@ -1,10 +1,9 @@
-{% extends "base.html" %} 
+{% extends "base2.html" %} 
 
 {% block content %} 
-    <H3>Hello! THis is blog index.</H3>
-    <br>
+    <H3>Hello! This is my blog index page.</H3>
     <p>
-        list of blogs below:
+        Here are my blogs:
     </p>
     {% for post in page.get_children %}
     <h2>{{ post.title }}</h2>

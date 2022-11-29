@@ -1,0 +1,25 @@
+<HTML>
+    {% load tailwind_tags %}
+    <head>
+    {% tailwind_css %}
+    </head>
+    
+    <body>
+      <div class="flex justify-around bg-cyan-900 h-1/6 text-slate-200 font-sans font-bold text-2xl items-center">
+        <div class="font-extrabold text-3xl">
+          <a href="/">Alex Gilman</a>
+        </div>
+        <div></div>
+        
+        <div><a href="/my-blogs/">Blogs</a></div>
+        <div><a href="#">Gallery</a></div>
+        <div><a href="/static/resume.pdf">Resume</a></div>
+      </div>
+      <div class="bg-teal-500 h-5/6">
+        {% block content %}
+        <p>
+         Hello, welcome
+        </p>
+        {% endblock %}
+      </div>
+    </body>
