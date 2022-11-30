@@ -1,12 +1,27 @@
 {% extends "base2.html" %} 
 
-{% block content %} 
-    <H3>Hello! This is my blog index page.</H3>
-    <p>
-        Here are my blogs:
-    </p>
+{% block content %}
+    <!-- div class="w-1/2 content-center text-2xl font-bold text-slate-200">Blogs:</div-->
     {% for post in page.get_children %}
-    <h2>{{ post.title }}</h2>
-    {{ post.ds }}
-{% endfor %}
+    <div class="flex justify-between">
+        <div> <!-- spacer...-->
+
+        </div>
+        <a href="{{ post.specific.url }}" class="flex border-2 justify-between border-cyan-700 bg-stone-300 w-1/2 items-center rounded m-1 p-3 h-16">
+            <span class="font-semibold"> 
+                {{ post.title }}
+            </span>
+            <span>
+                {{ post.specific.subtitle }}
+            </span>
+            <div>
+                {{ post.specific.ds }}
+            </div>
+            
+        </a>
+        <div>
+
+        </div>
+    </div>
+    {% endfor %}
 {% endblock %}
