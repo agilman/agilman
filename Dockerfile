@@ -56,4 +56,4 @@ RUN python manage.py collectstatic --noinput --clear
 #   PRACTICE. The database should be migrated manually or using the release
 #   phase facilities of your hosting platform. This is used only so the
 #   Wagtail instance can be started with a simple "docker run" command.
-CMD set -xe; python manage.py migrate --noinput; waitress-serve --listen="127.0.0.1:8030" agilman.wsgi:application
+CMD set -xe; python manage.py migrate --noinput; waitress-serve --listen="0.0.0.0:8030" agilman.wsgi:application
