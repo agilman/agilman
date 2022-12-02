@@ -30,25 +30,27 @@ RUN pip install waitress
 COPY requirements.txt /
 RUN pip install -r /requirements.txt
 
-# Use /app folder as a directory where the source code is stored.
-WORKDIR /app
-
 # Set this directory to be owned by the "wagtail" user. This Wagtail project
 # uses SQLite, the folder needs to be owned by the user that
 # will be writing to the database file.
+RUN mkdir /app
 RUN chown wagtail:wagtail /app
 
 # Copy the source code of the project into the container.
-COPY --chown=wagtail:wagtail . .
+COPY --chown=wagtail:wagtail . /app
 
-# Use user "wagtail" to run the build commands below and the server itself.
-USER wagtail
+WORKDIR /app
 
 # Collect static files.
 RUN python manage.py collectstatic --noinput --clear
 
-#RUN python manage.py migrate --noinput
-#In this case DB creation will happen before docker image creation... so that superuser is created before container
+RUN chown wagtail:wagtail /app
+
+# Use user "wagtail" to run the build commands below and the server itself.
+USER wagtail
+
+#Create database
+RUN python manage.py migrate
 
 # Runtime command that executes when "docker run" is called, it does the
 # following:
