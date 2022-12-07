@@ -7,9 +7,9 @@
         <div> <!-- spacer...-->
 
         </div>
-        <a href="{{ post.specific.url }}" class="flex border-2 justify-between border-cyan-700 bg-stone-300 w-1/2 items-center rounded m-1 p-3 h-16">
-            <span class="font-semibold"> 
-                {{ post.title }}
+        <a href="{{ post.specific.url }}" class="flex justify-between bg-gray-200 w-1/2 items-center rounded m-1 p-3 h-16">
+            <span class="font-bold"> 
+                {{ post.title | capfirst}}
             </span>
             <span>
                 {{ post.specific.subtitle }}

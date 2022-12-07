@@ -3,8 +3,17 @@
 {% load wagtailcore_tags %} 
 
 {% block content %}
-  <h1>{{page.title }}</h1>
-  <br>
-  {{ page.body|richtext }} 
-
+<div class="flex justify-between">
+  <div></div> <!-- spacer -->
+  <div class="border-2 rounded w-3/5 p-3 bg-gray-200 mt-2">
+    <div class="flex justify-between"> <!-- title line header wrapper -->
+      <span class="font-extrabold text-3xl underline"> {{page.title | capfirst  }}</span>
+      <span> {{ page.ds }}</span>
+    </div>
+    <div class="mt-2"> <!-- below the header-->
+      {{ page.body|richtext }} 
+    </div>
+  </div>
+  <div></div> <!-- spacer-->
+</div>
 {% endblock %}
