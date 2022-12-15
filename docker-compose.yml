@@ -1,0 +1,9 @@
+version: "2.14.1"
+services:
+  web: 
+    build: .
+    ports: 
+      - "8030:8030"
+    command: waitress-serve --listen="0.0.0.0:8030" agilman.wsgi:application
+    volumes: 
+      - .:/app
