@@ -7,3 +7,4 @@ services:
     command: waitress-serve --listen="0.0.0.0:8030" agilman.wsgi:application
     volumes: 
       - .:/app
+    restart: always
